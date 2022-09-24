@@ -13,13 +13,14 @@ h1 {
 .articleCard {
     border: 1px solid black;
     display: flex;
-    gap: 40px;
+    gap: 10px;
     margin-bottom: 40px;
 }
 
 .articleCard--image img {
     height: auto;
-    background-color: grey;
+    max-width: 250px;
+    padding: 30px;
 }
 
 .articleCard--text {
@@ -31,10 +32,17 @@ h1 {
 }
 
 .articleCard--text p {
-    font-size: 200;
+    font-size: 15px;
 }
 
 .article--header--wrapper {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    color: white;
+}
+
+.article--content {
     margin: 0 auto;
     max-width: 800px;
     padding: 20px;
