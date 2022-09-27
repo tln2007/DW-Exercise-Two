@@ -1,31 +1,22 @@
 import React from "react";
-import ArticleCard from "../components/ArticleCard"
+import ArticleCard from "../components/ArticleCard";
+import Data from "../components/data";
 
 function List() {
+    //console.log(Data);
     return (
         <main className="pageWrapper">
             <h1>Articles</h1>
-            <ArticleCard 
-                blurb="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                date="Wednesday, August 22, 2019"
-                imageAlt=""
-                imageSrc="http://webvision.med.utah.edu/wp-content/uploads/2012/06/50-percent-gray.jpg"
-                title="Article Title"
-            />
-            <ArticleCard
-                blurb="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                date="Wednesday, August 22, 2019"
-                imageAlt=""
-                imageSrc="http://webvision.med.utah.edu/wp-content/uploads/2012/06/50-percent-gray.jpg"
-                title="Article Title"
-            />
-            <ArticleCard 
-                blurb="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                date="Wednesday, August 22, 2019"
-                imageAlt=""
-                imageSrc="http://webvision.med.utah.edu/wp-content/uploads/2012/06/50-percent-gray.jpg"
-                title="Article Title"
-            />
+            {Data.map((article, i) => (         
+                <ArticleCard 
+                    key={i}
+                    blurb={article.blurb}
+                    date={article.publishedDate}
+                    imageAlt={article.image.alt}
+                    imageSrc={article.image.src}
+                    title={article.title}
+                />
+            ))}
         </main>
     );
 }
