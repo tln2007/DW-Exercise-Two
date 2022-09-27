@@ -18,10 +18,9 @@ h1 {
 }
 
 .articleCard--image {
-    background-color: lightgrey;
     flex-basis: 30%;
     height: 170px;
-    margin: 30px;
+    margin: 10px;
     padding: 30px;
 }
 
