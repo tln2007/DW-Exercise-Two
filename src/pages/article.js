@@ -1,5 +1,5 @@
 import { findAllByAltText } from "@testing-library/react";
-import React from "react";
+import React, { useMemo } from "react";
 import { useParams } from "react-router";
 import Data from '../components/data'
 
@@ -11,19 +11,26 @@ function Article () {
     ))
     
     console.log(articleData)
+
+    const date = useMemo (() => {
+        if(!articleData) return '';
+        const parsedDate = new Date(articleData.publishedDate);
+        return parsedDate.toDateString();
+    }, [articleData]);
+    
     return (
         <main>
             <header 
                 className="article--header"
                 style={{ 
-                    backgroundImage: "",
+                    backgroundImage: `url('${articleData.image.url}')`,
                     backgroundSize: "cover",
                 }}
             >
                 <div className="article--header--wrapper">
                     <h1>{articleData.title}</h1>
                     <p>Wednesday, August 22, 2019</p>
-                    <p>Note that this is the article blurb. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab.</p>
+                    <p className="blurb">{articleData.blurb}</p>
                 </div>
             </header>
             <section className="article--content">
