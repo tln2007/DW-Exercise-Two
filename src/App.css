@@ -39,15 +39,9 @@ h1 {
     font-size: 15px;
 }
 
-.article--header--wrapper {
+.article--header--wrapper, .article--content {
     margin: 0 auto;
     max-width: 800px;
     padding: 20px;
-    color: black;
 }
 
-.article--content {
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 20px;
-}
